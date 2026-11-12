@@ -1,0 +1,71 @@
+/* HypnoTapp — tokens carried over from the app's src/theme/tokens.ts */
+:root{
+  --deep-night:#08171F;--midnight:#102A35;--surface:#123A44;--forest:#123640;--teal:#17434A;
+  --sirius:#5EA9A4;--sirius-glow:#B7E4DA;--aurora:#3E8583;--moon:#F0F7F2;--star:#D2F0E8;
+  --mist:#B1C7C1;--stone:#92AAA5;--gold:#E9D49B;--warm-stone:#D7AC6B;
+  --border:rgba(183,228,218,.13);--border-strong:rgba(183,228,218,.26);--outline:rgba(183,228,218,.46);
+  --tint-soft:rgba(94,169,164,.13);--primary-edge:#DDF6EF;--primary-deep:#8CC4B8;
+  --r-card:24px;--r-button:16px;--r-pill:999px;
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Inter,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{color-scheme:dark;background:var(--deep-night)}
+body{margin:0;min-height:100vh;font-family:var(--font);font-size:16px;line-height:1.5;color:var(--moon);background:var(--deep-night);position:relative;overflow-x:hidden}
+a{color:var(--sirius-glow)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--sirius-glow);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--sirius-glow);color:var(--deep-night);padding:.5rem .8rem;border-radius:8px;z-index:10}
+.skip:focus{left:8px}
+/* the app's Atmosphere: a soft moon-glow at the top of every screen */
+.atmosphere{position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(900px 620px at 50% -200px,rgba(183,228,218,.19),rgba(183,228,218,.08) 40%,rgba(183,228,218,0) 72%)}
+.sky{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.stars{width:100%;height:100%;display:block}
+@keyframes tw{0%,100%{opacity:1}50%{opacity:.5}}
+@media (prefers-reduced-motion:no-preference){
+  .tw0{animation:tw 5.2s ease-in-out infinite}.tw1{animation:tw 6.9s ease-in-out infinite}.tw2{animation:tw 8.3s ease-in-out infinite}
+}
+.top,main,.foot{position:relative;z-index:1}
+.top{display:flex;align-items:center;justify-content:space-between;gap:1rem;max-width:1080px;margin:0 auto;padding:1.1rem 1.25rem}
+.brand{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;letter-spacing:.2px;color:var(--moon);text-decoration:none;font-size:1.05rem}
+.mark{color:var(--sirius-glow)}
+.top nav{display:flex;gap:1rem;flex-wrap:wrap}
+.top nav a{color:var(--mist);text-decoration:none;font-size:.9rem}
+.top nav a:hover{color:var(--sirius-glow)}
+main{max-width:1080px;margin:0 auto;padding:1rem 1.25rem 3rem}
+.eyebrow{margin:0 0 .5rem;font-size:11px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--sirius-glow)}
+.muted{color:var(--stone)}
+h1{font-size:clamp(2.1rem,6vw,3rem);line-height:1.12;letter-spacing:-.6px;margin:.2rem 0 .8rem}
+h2{font-size:1.375rem;line-height:1.27;letter-spacing:-.2px;margin:0 0 .6rem}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center;padding:2.5rem 0 2rem}
+.promise{font-size:1.25rem;line-height:1.4;color:var(--moon);margin:0 0 1rem}
+.lede{color:var(--mist);max-width:56ch;margin:0 0 1.4rem}
+.badge{display:inline-block;padding:.5rem .9rem;border-radius:var(--r-pill);border:1px solid rgba(233,212,155,.38);background:rgba(233,212,155,.08);color:var(--gold);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.hero-sky{display:flex;flex-direction:column;align-items:center;gap:.6rem}
+.figure{width:min(320px,80vw);height:auto;filter:drop-shadow(0 0 18px rgba(183,228,218,.25))}
+.figure-caption{margin:0;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:.5rem}
+/* the app's glass card: translucent border, lighter top edge, mint-tinted depth */
+.card{background:var(--midnight);border:1px solid var(--border);border-top-color:var(--border-strong);border-radius:var(--r-card);padding:1.4rem 1.4rem 1.2rem;box-shadow:0 7px 18px rgba(36,85,99,.09)}
+.card .eyebrow{color:var(--sirius-glow)}
+.plain{list-style:none;margin:0;padding:0;display:grid;gap:.55rem;color:var(--mist)}
+.plain li{position:relative;padding-left:1.1rem}
+.plain li::before{content:"✦";position:absolute;left:0;top:0;color:var(--sirius);font-size:.75rem;line-height:1.6}
+.note{color:var(--mist);text-align:center;margin:1.6rem auto 1.2rem;max-width:60ch}
+.notice{background:var(--surface);border:1px solid var(--border);border-top-color:var(--border-strong);border-radius:var(--r-card);padding:1.3rem 1.4rem;color:var(--mist)}
+.notice h2{color:var(--moon);font-size:1.05rem;margin-bottom:.4rem}
+.notice p{margin:0}
+.foot{max-width:1080px;margin:0 auto;padding:1.5rem 1.25rem 2.5rem;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center}
+.foot nav{display:flex;gap:1.2rem;flex-wrap:wrap}
+.foot a{font-size:.9rem}
+.prose{max-width:72ch}
+.prose h2{margin-top:2rem}
+.prose p,.prose li{color:var(--mist)}
+.prose strong{color:var(--moon)}
+.prose ol,.prose ul{padding-left:1.3rem}
+.prose li{margin:.35rem 0}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding-top:1.5rem}
+  .hero-sky{order:-1}
+  .figure{width:min(220px,60vw)}
+  .grid{grid-template-columns:1fr}
+}
+@media (max-width:420px){.top{padding:.9rem 1rem}main{padding:.5rem 1rem 2.5rem}.card{padding:1.1rem}}
